@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Bootstrap Modal Example</title>
+  <!-- Add Bootstrap CSS link here -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+
+<!-- Button to open the modal -->
+<button type="button" class="btn btn-primary" id="open-modal">Open Modal</button>
+
+<!-- Bootstrap Modal -->
+<div class="modal" id="newton-modal" tabindex="-1" aria-labelledby="newton-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newton-modal-label">New Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js script links here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  // Script to handle modal opening
+  var openModalButton = document.getElementById('open-modal');
+  var newtonModal = new bootstrap.Modal(document.getElementById('newton-modal'));
+
+  openModalButton.addEventListener('click', function() {
+    newtonModal.show();
+  });
 </script>
 
 </body>
-
 </html>
